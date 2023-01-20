@@ -1,11 +1,16 @@
 @charset "UTF-8";
-/*=====================*/
-/*=    로그인/회원가입    =*/
-/*=====================*/
+
 ol, ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+input[type="text"], input[type=password] {
+	width: 300px;
+	margin: 10px 0;
+	height: 30px;
+	border: 1px solid #cccccc;
 }
 
 #container {
@@ -20,6 +25,7 @@ ol, ul {
 
 #contet_area {
 	position: static;
+	margin-top: 30px;
 }
 
 #login_btn {
@@ -28,9 +34,14 @@ ol, ul {
 	padding: 10px;
 }
 
+#attach-file {
+	display: block;
+}
+
 .main_wrap {
 	margin: 0 auto;
 	overflow: hidden;
+	min-height: 620px;
 }
 
 .lnb_title {
@@ -85,14 +96,17 @@ ol, ul {
 	margin: 0 auto;
 	overflow: hidden;
 }
+
 .log_title {
 	height: 50px;
+	margin-bottom: 30px;
 }
-.log_title > img {
+
+.log_title>img {
 	float: left;
 }
 
-.log_title > p {
+.log_title>p {
 	float: left;
 	margin-top: 10px;
 	margin-bottom: 0;
@@ -126,6 +140,58 @@ ol, ul {
 	margin: 10px 0;
 }
 
-.btn-outline-dark:hover{
+.btn-outline-dark:hover {
 	background-color: #cccccc;
+}
+
+.join_box {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.join_table {
+	border-top: 1px solid #000;
+	width: 1200px;
+}
+
+.join_table>tbody>tr {
+	border-bottom: 1px solid #d1d1d1;
+}
+
+.tb_th {
+	padding: 10px 5px;
+	color: #000;
+	background-color: #f8f8f8;
+}
+
+.join_table>tbody>tr>td {
+	padding: 10px;
+	text-align: left;
+}
+
+.input_post {
+	width: 100px !important;
+}
+
+.board_btn {
+	margin: 10px;
+}
+
+.board_btn>a {
+	padding: 10px 80px;
+}
+
+.join_box_title>h5 {
+	float: left;
+	margin-right: 10px;
+}
+
+.join_box_title>span {
+	float: left;
+}
+
+.must {
+	color: red;
 }

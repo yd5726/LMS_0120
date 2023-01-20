@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>로그인</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/member.css?<%=new java.util.Date()%>">
+<link rel="stylesheet" type="text/css"
+	href="css/member.css?<%=new java.util.Date()%>">
 <!-- ctrl+shift+f : 자동 줄맞춤 -->
 </head>
 <body>
@@ -18,7 +19,7 @@
 			<h2 class="lnb_title text-center text-dark">회원 서비스</h2>
 			<ul id="lnb" class="lnb_list">
 				<li id="lnb_login"><a href="login.me"
-					class="btn btn-outline-dark rounded-pill text-dark"> 로그인 </a></li>
+					class="btn btn-dark rounded-pill text-white"> 로그인 </a></li>
 				<li id="lnb_join"><a href="member.me"
 					class="btn btn-outline-dark rounded-pill text-dark"> 회원가입 </a></li>
 				<li id="lnb_find"><a href="find.me"
@@ -39,7 +40,7 @@
 				<div class="content_body">
 					<div class="login_box">
 						<div class="log_form">
-						<div class="log_title">
+							<div class="log_title">
 								<img src="img/common/login_tt.jpg" alt="아이디와 비밀번호를 입력해주세요 ">
 								<p>아이디와 비밀번호를 입력해주세요</p>
 							</div>
