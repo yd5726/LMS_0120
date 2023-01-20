@@ -21,7 +21,7 @@ public class MemberController {
 	@Autowired private MemberService member;
 
 	//회원 가입 화면 요청
-	@RequestMapping("/member")
+	@RequestMapping("/member.me")
 	public String member(HttpSession session) {
 		session.setAttribute("category", "join");
 		//응답화면연결
@@ -29,7 +29,7 @@ public class MemberController {
 	}
 	
 	//회원 가입 처리 요청
-	@ResponseBody @RequestMapping(value="/join")
+	@ResponseBody @RequestMapping(value="/join.me")
 	public String join(MemberVO vo, MultipartFile profile_image, HttpServletRequest request) {
 		//첨부된 프로필 파일이 있는 경우
 		if( ! profile_image.isEmpty() ) {
@@ -52,7 +52,7 @@ public class MemberController {
 	}
 	
 	// 로그인 화면 요청
-	@RequestMapping("/login")
+	@RequestMapping("/login.me")
 	public String login(HttpSession session) {
 		session.setAttribute("category", "login");
 		//응답화면연결
@@ -60,7 +60,7 @@ public class MemberController {
 	}
 	
 	//로그인 처리 요청
-	@ResponseBody @RequestMapping("/smartLogin")
+	@ResponseBody @RequestMapping("/smartLogin.me")
 	public boolean login(String id, String pw, HttpSession session) {
 		//비지니스로직 - 화면에서 입력한 아이디/비번이 일치하는 회원정보를 DB에서 조회한다	
 		HashMap<String, String> map = new HashMap<String, String>();
@@ -74,7 +74,7 @@ public class MemberController {
 	}
 	
 	//로그아웃 처리 요청
-	@RequestMapping("/logout")
+	@RequestMapping("/logout.me")
 	public String logout(HttpSession session) {
 		//비지니스로직 - 세션에 있는 로그인정보를 삭제한다
 		session.removeAttribute("loginInfo");
@@ -83,26 +83,26 @@ public class MemberController {
 	}
 	
 	//아이디 중복확인 요청
-	@ResponseBody @RequestMapping("/idCheck")
+	@ResponseBody @RequestMapping("/idCheck.me")
 	public boolean idcheck(String id) {
 		//비지니스로직-화면에서 입력한 아이디가 DB에 존재하는지 확인: 0 아이디 존재X, 1 아이디 존재
 		return member.member_idCheck(id)==0 ? false: true ;
 	}
 	
 	//마이 페이지 화면 요청
-	@RequestMapping("/mypage")
+	@RequestMapping("/mypage.me")
 	public String mypage(HttpSession session) {
 		//응답화면연결
 		return "member/mypage";
 	}
 	//회원 정보 수정 화면 요청
-	@RequestMapping("/modify_myinfo")
+	@RequestMapping("/modify_myinfo.me")
 	public String modify_myinfo(HttpSession session) {
 		//응답화면연결
 		return "member/modify_myinfo";
 	}
 	//회원 정보 수정 화면 요청
-	@RequestMapping("/enrolment_log")
+	@RequestMapping("/enrolment_log.me")
 	public String enrolment_log(HttpSession session) {
 		//응답화면연결
 		return "member/enrolment_log";
