@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>join</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css"
 	href="css/member.css?<%=new java.util.Date()%>">
@@ -13,7 +13,6 @@
 	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <body>
-	<!-- ========================================================================================= -->
 	<h1 class="d-none">홈-회원서비스-회원가입</h1>
 	<div id="container" class="ct_top">
 		<div class="main_wrap">
@@ -155,7 +154,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- ========================================================================================= -->
 	<script src='js/member.js?<%=new java.util.Date()%>'></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<script
