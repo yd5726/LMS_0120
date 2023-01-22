@@ -196,12 +196,14 @@ input[type="text"], input[type=password] {
 	color: red;
 }
 
-.find_box {
+.find_box1 {
 	width: 100%;
 	max-width: 550px;
-	margin: 0 auto;
+	margin: 10px;
 	overflow: hidden;
 	border: 1px solid #dedede;
+	display: inline-block;
+	text-align: center;
 }
 
 .find_title {
@@ -213,7 +215,91 @@ input[type="text"], input[type=password] {
 	background: #f9f9f9;
 }
 
+/* =================================== */
 .find_content {
 	width: 100%;
-	padding: 30px 0;
+	padding: 30px;
+}
+.tab_wrap {
+	position: relative;
+	margin: 10px 20px;
+}
+
+.tab_tt {
+	width: 100%;
+	display: inline-block;
+	height: 36px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #dedede;	
+}
+
+.tab_tt > li {
+	float: left;
+	position: relative;
+	padding: 5px 10px;
+}
+
+.tab_title > a {
+	font-size: 20px;
+	color: #000;
+}
+
+.tab_con_wrap {
+	margin-bottom: 0;
+}
+
+.find_box {
+	padding: 10px 0;
+	margin: 0 auto;
+}
+
+.find_id > li {
+	overflow: hidden;
+	position: relative;
+	padding-left: 90px;
+	margin-bottom: 10px;
+	line-height: 40px;
+}
+
+.find_id > li > strong {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	width: 90px;
+	line-height: 58px;
+	color: #000;
+	font-size: 20px;
+	text-align: left;
+}
+
+.find_id > li > div {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.find_id > li > input[type=text] {
+	margin-top: 1px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.input_size > input[type="text"] {
+	width: 100%;
+	height: auto;
+	margin: 10px 0;
+	border: 1px solid #cccccc;
+}
+
+.find_id li.find_btn {
+	padding: 0;
+}
+.find_btn > a {
+	width: 100%;
+	padding: 15px 10px;
+}
+
+.tab_title1 {
+	border-bottom: 3px solid #000;
 }

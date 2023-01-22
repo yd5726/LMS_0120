@@ -98,7 +98,7 @@
 										</tr>
 										<tr>
 											<th class="tb_th"><label for="email"
-												class="join_required chk">이메일</label></th>
+												class="join_required chk">이메일<span class="must">*</span></label></th>
 											<td><div style="float: left;">
 													<input type='text' name='email' class='chk w200'>
 													<div class='valid'>이메일을 입력하세요</div>
