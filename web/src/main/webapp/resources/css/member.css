@@ -435,3 +435,19 @@ input[type="text"], input[type=password] {
 	padding: 10px;
 	border-bottom: 1px solid #cccccc;
 }
+
+.tb_title>span{
+	font-size: 0.6em;
+}
+
+.my_info_in>li>strong {
+	float: left;
+	width: 80px;
+	padding-right: 10px;
+}
+/*=====================================*/
+/*=             수강현황                =*/
+/*=====================================*/
+
+
+

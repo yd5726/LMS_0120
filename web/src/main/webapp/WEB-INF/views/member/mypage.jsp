@@ -61,7 +61,7 @@
 					</div>
 					<div class="enrolment_log_box">
 						<h5 class="tb_title">
-							수강 중인 과정 <span style="font-size: 0.8em;">(최근 수강시작일순 10개)</span>
+							수강 중인 과정 <span>(최근 수강시작일순 10개)</span>
 						</h5>
 						<div class="tb_box type_list mypage_course_user_list">
 							<table summary="수강 중인 과정 및 기간을 나타냅니다.">
@@ -88,9 +88,7 @@
 						</div>
 					</div>
 					<div class="consulting_box">
-						<h5 class="tb_title">
-							상담
-						</h5>
+						<h5 class="tb_title">상담</h5>
 						<div class="tb_box type_list mypage_course_user_list">
 							<table summary="상담내역을 나타냅니다.">
 								<colgroup>
@@ -116,5 +114,6 @@
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>
