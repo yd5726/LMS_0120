@@ -133,4 +133,18 @@ public class MemberController {
 		// 응답화면연결
 		return "member/find";
 	}
+	
+	// 수강신청 - 강의 목록 화면
+	@RequestMapping("/privacy.me")
+	public String privacy(HttpSession session) {
+		// 응답화면연결
+		return "member/enrolment_lecture";
+	}
+	
+	// 수강신청 - 강의 상세 화면
+	@RequestMapping("/terms.me")
+	public String terms(HttpSession session) {
+		// 응답화면연결
+		return "member/enrolment_lecture_detail";
+	}
 }
