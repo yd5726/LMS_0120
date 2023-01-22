@@ -138,7 +138,8 @@ public class MemberController {
 	@RequestMapping("/privacy.me")
 	public String privacy(HttpSession session) {
 		// 응답화면연결
-		return "member/enrolment_lecture";
+		/* return "member/enrolment_lecture"; */
+		return "member/lec_list_test";
 	}
 	
 	// 수강신청 - 강의 상세 화면
