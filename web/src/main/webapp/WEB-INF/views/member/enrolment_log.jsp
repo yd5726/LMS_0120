@@ -18,7 +18,7 @@
 			<ul id="lnb" class="lnb_list">
 				<li id="lnb_enrolment_log"><a href="enrolment_log.me"
 					class="btn btn-dark rounded-pill text-white"> 수강현황 </a></li>
-				<li id="lnb_modify_myinfo"><a href="modify_myinfo.me"
+				<li id="lnb_modify_myinfo"><a href="modify_verify.me"
 					class="btn btn-outline-dark rounded-pill text-dark"> 회원정보수정 </a></li>
 			</ul>
 			<div id="contet_area2">
@@ -77,7 +77,6 @@
 								</tbody>
 							</table>
 						</div>
-
 					</div>
 				</div>
 			</div>

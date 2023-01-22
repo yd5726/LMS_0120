@@ -18,7 +18,7 @@
 			<ul id="lnb" class="lnb_list">
 				<li id="lnb_enrolment_log"><a href="enrolment_log.me"
 					class="btn btn-outline-dark rounded-pill text-dark"> 수강현황 </a></li>
-				<li id="lnb_modify_myinfo"><a href="modify_myinfo.me"
+				<li id="lnb_modify_myinfo"><a href="modify_verify.me"
 					class="btn btn-outline-dark rounded-pill text-dark"> 회원정보수정 </a></li>
 			</ul>
 			<div id="contet_area">
@@ -39,10 +39,8 @@
 								<li><strong>이메일</strong> <span>hana@naver.com</span></li>
 								<li><strong>전화번호</strong> <span>010-1001-1001</span></li>
 							</ul>
-							<span class="btn_more"> <!-- <a href="modify_myinfo"
-								title="정보수정" class="modify_myinfo_btn"> 정보수정 </a> --> <a
-								href="modify_myinfo.me" class="btn btn-dark text-white">
-									정보수정 </a>
+							<span class="btn_more"> <a href="modify_verify.me"
+								class="btn btn-dark text-white"> 정보수정 </a>
 							</span>
 						</div>
 						<div class="my_note">
