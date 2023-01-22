@@ -11,7 +11,7 @@
 	href="css/member.css?<%=new java.util.Date()%>">
 </head>
 <body>
-	<h1 class="d-none">홈-마이페이지-메인</h1>
+	<h1 class="d-none">홈-마이페이지-회원정보수정</h1>
 	<div id="container" class="ct_top">
 		<div class="main_wrap">
 			<h2 class="lnb_title text-center text-dark">마이페이지</h2>
@@ -21,18 +21,38 @@
 				<li id="lnb_modify_myinfo"><a href="modify_myinfo.me"
 					class="btn btn-dark rounded-pill text-white"> 회원정보수정 </a></li>
 			</ul>
-			<div id="contet_area">
+			<div id="contet_area2">
 				<div class="path">
 					<ol class='path_list'>
 						<li>마이페이지</li>
-						<li class="last">메인</li>
+						<li class="last">회원정보수정</li>
 					</ol>
 				</div>
 				<div class="content_body">
-					<div class="my_box">
-						
+					<div class="modify_myinfo_box">
+						<div class="tb_top tb_top_large">
+							<div class="grayline_tab">
+								<ul class="tab_tt">
+									<li class="tab_title on"><a href="#개인정보수정">개인정보수정</a></li>
+									<li class="tab_title"><a href="#비밀번호변경">비밀번호변경</a></li>
+								</ul>
+							</div>
+							<div class="tb_box type_write">
+							<div class="passwd_box top">
+								<div class="box_sub">
+									<h3 class="box_stitle">
+										비밀번호를 입력해주세요.
+									</h3>
+									<p>회원님의 개인정보보호를 위해 회원정보를 조회/수정하기 전 비밀번호를 다시 확인받고 있습니다.</p>
+									<h4 class="box_pw">
+										<input type="password" name="passwd" id="passwd" class="w200">
+										<a href="#" class="btn btn-dark text-white">확인</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+						</div>
 					</div>
-								
 				</div>
 			</div>
 		</div>
