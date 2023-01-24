@@ -113,6 +113,7 @@
 	padding: 0 15px;
 	position: relative;
 	transition: all 0.15s;
+	text-align: center;
 }
 
 .en_table table {
@@ -165,9 +166,107 @@
 	left: 0;
 	text-align: left;
 }
+
 .percent.p2 {
 	right: 0;
 	text-align: right;
+}
+
+.pm_tabs_view {
+	height: 50px;
+	margin-top: 40px;
+}
+
+.pm_tabs_view ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pm_tabs_view li {
+	float: left;
+	width: 16.66666%;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-bottom: 1px solid #e84c4c;
+	background-color: #f3f3f3;
+}
+
+.pm_tabs_view li.on {
+	border: 1px solid #e84c4c;
+	border-top-width: 5px;
+	border-bottom: none;
+	background-color: #fff;
+}
+
+.pm_tabs_view li.on a {
+	color: #222;
+	height: 46px;
+	line-height: 46px;
+	background-color: #fff;
+	text-align: center;
+}
+
+.pm_tabs_view a {
+	color: #555;
+	font-size: 18px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+}
+
+#pmLectContent {
+	padding: 50px 20px 50px;
+}
+
+.pm_view_section .tit {
+	font-size: 26px;
+	color: #222;
+	position: relative;
+	background-color: #fff;
+	margin-bottom: 10px;
+	text-align: left;
+	background-color: #fff;
+}
+
+.pm_view_section .tit b {
+	display: inline-block;
+	background-color: #fff;
+	position: relative;
+	padding-right: 20px;
+}
+
+.pm_view_section .tit span {
+	color: #bbb;
+	font-size: 13px;
+	display: block;
+	text-transform: uppercase;
+}
+
+.pm_view_section .tit:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 0;
+	border-bottom: 4px dotted #eee;
+	position: absolute;
+	left: 140px;
+	top: 17px;
+}
+
+.pm_view_section .cont {
+	font-size: 15px;
+	color: #777;
+	line-height: 1.6;
+	padding: 0 0 0 170px;
+	position: relative;
+	min-height: 120px;
+	text-align: left;
+}
+
+.pm_view_section .cont+.tit {
+	margin-top: 20px;
 }
 </style>
 <body>
@@ -229,6 +328,38 @@
 						</td>
 					</tr>
 				</table>
+			</div>
+		</div>
+	</div>
+	<div id="container2">
+		<div class="main_wrap2">
+			<div class="pm_tabs_view">
+				<ul>
+					<li class="on"><a>강의소개</a></li>
+					<li><a>강의목록</a></li>
+					<li><a>공지사항</a></li>
+					<li><a>학습Q/A</a></li>
+					<li><a>수강후기</a></li>
+					<li><a>자료실</a></li>
+				</ul>
+			</div>
+			<div class="pm_view_section" id="pmLectContent">
+				<div class="tit">
+					<b> 강의 범위 <span>lecture scope</span>
+					</b>
+				</div>
+				<div class="cont">
+					싸플 중학교 과학2 <br> 1. 물질의 구성 <br> 2. 전기와 자기 <br> 3. 태양계
+					<br> 4. 식물과 에너지 <br> 5. 동물과 에너지
+				</div>
+				<div class="tit">
+					<b> 수강대상 <span>lecture target</span>
+					</b>
+				</div>
+				<div class="cont">
+					- 중학교 2학년 과학을 체계적으로 학습하고자 하는 학생 <br> - 과학의 기초가 없어 중학교 과학이 어려운
+					학생 <br> - 수행평가 및 지필고사를 완벽하게 대비하고자 하는 학생
+				</div>
 			</div>
 		</div>
 	</div>
