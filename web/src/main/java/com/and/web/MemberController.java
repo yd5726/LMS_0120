@@ -160,7 +160,7 @@ public class MemberController {
 	@RequestMapping("/terms.me")
 	public String terms(HttpSession session) {
 		// 응답화면연결
-		/* return "member/design_test_ver3"; */
-		return "member/design_test_ver4";
+		return "member/design_test_ver3";
+		/* return "member/design_test_ver4"; */
 	}
 }
