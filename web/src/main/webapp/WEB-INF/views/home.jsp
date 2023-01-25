@@ -8,10 +8,9 @@
 </head>
 <style>
 #container {
-	/* background-color: #3bbbf3; */
+	background-color: #3bbbf3;
 	width: 100%;
 	overflow: hidden;
-	/* margin-top: 140px; */
 	position: relative;
 }
 

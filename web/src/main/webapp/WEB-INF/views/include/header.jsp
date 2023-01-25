@@ -84,7 +84,7 @@ nav ul li ul li {
 
 nav ul li:hover ul {
 	display: block;
-	z-index: 999;	/* 우선순위 적용? */
+	z-index: 999; /* 우선순위 적용? */
 }
 
 strong {
@@ -233,50 +233,6 @@ span {
 		</div>
 	</div>
 </div>
-<%-- <nav>
-	<div class="container">
-		<div class="left-items">
-			<ul>
-				<li class="nav_link">
-					<a href='<c:url value="/"/>'>홈</a>
-				</li>
-				<li class="nav_link">
-					<div class="dropdown">
-						<a class="dropdown-main">소개</a>
-						<div class="dropdown-content">
-							<a href="#">학원소개</a> <a href="#">강사소개</a>
-						</div>
-					</div>
-				</li>
-				<li class="nav_link">
-					<a href="#강의">강의</a>
-				</li>
-			</ul>
-		</div>
-		<div class="right-items">
-			<c:if test="${empty loginInfo }">
-				<div class="loginfo">
-					<ul>
-						<!-- 로그인 하지 않은 경우 -->
-						<li class="nav-link"><a href='login.me'>로그인</a></li>
-						<li class="nav-link"><a href='member.me'>회원가입</a></li>
-					</ul>
-				</div>
-			</c:if>
-			<c:if test="${not empty loginInfo }">
-				<div class="loginfo">
-					<ul>
-						<!-- 로그인 한 경우 -->
-						<li><img class='profile' src="${loginInfo.profilepath}">
-						<li><strong> ${loginInfo.member_name }</strong></li>
-						<li class="nav-link"><a href="modify_pw.me">비밀번호변경</a></li>
-						<li class="nav-link"><a href="logout.me">로그아웃</a></li>
-					</ul>
-				</div>
-			</c:if>
-		</div>
-	</div>
-</nav> --%>
 <nav>
 	<div class="container">
 		<div class="left-items">
@@ -309,8 +265,13 @@ span {
 				<div class="loginfo">
 					<ul>
 						<!-- 로그인 한 경우 -->
-						<li><img class='profile' src="${loginInfo.profilepath}">
-						<li><strong> ${loginInfo.member_name }</strong></li>
+						<c:if test='${empty loginInfo.profilepath}'>
+							<li><a href="mypage.me"><img class='profile' src="img/common/default_profile_img.png"></a></li>
+						</c:if>
+						<c:if test='${not empty loginInfo.profilepath}'>
+							<li><a href="mypage.me"><img class='profile' src='${loginInfo.profilepath}'></a></li>
+						</c:if>
+						<li><strong>${loginInfo.member_name }</strong></li>
 						<li><a href="modify_pw.me">비밀번호변경</a></li>
 						<li><a href="logout.me">로그아웃</a></li>
 					</ul>
