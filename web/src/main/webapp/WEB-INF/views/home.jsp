@@ -5,25 +5,31 @@
 <title>Home</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<meta charset="utf-8">
 </head>
 <style>
 #container {
-	background-color: #3bbbf3;
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	min-height: 820px;
 }
 
 .main_wrap {
-	width: 980px;
-	margin: 0 auto;
+	min-width: 1200px;
 	position: relative;
 	overflow: hidden;
+	background-color: #3bbbf3;
 }
 
 .sub_wrap {
 	overflow: hidden;
-	padding: 80px 0;
+	padding: 80px 100px;
+	width: 1200px;
+	margin: 0 auto;
 }
 
 .wrap1 {
@@ -114,6 +120,33 @@ to {
 }
 }
 </style>
+<style>
+.teacher_intro {
+	min-width: 1200px;
+	position: relative;
+	overflow: hidden;
+	margin: 20px 0;
+}
+
+.flex_box {
+	display: flex;
+	justify-content: center;
+}
+
+.flex_box_border {
+	border: 1px solid #000;	
+}
+
+.flex_box img {
+	width: 400px;
+	height: 400px;
+}
+
+.teacher_intro h2 {
+	font-size: 50px;
+	margin: 20px 0;
+}
+</style>
 <body>
 	<div id="container">
 		<div class="main_wrap">
@@ -148,6 +181,80 @@ to {
 					</div>
 					<div class="wrap2_2">
 						<img src="img/banner/banner7.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="teacher_intro">
+			<h2 class="text-primary font-secondary">Teacher Intro</h2>
+			<div class="flex_box">
+				<div class="flex_box_border">
+					<div class="team-item">
+						<div class="position-relative overflow-hidden">
+							<img class="img-fluid w-100" src="img/teacher/teacher1.png">
+							<div
+								class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+								<div class="d-flex align-items-center justify-content-start">
+									<a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-twitter fw-normal"></i></a> <a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-facebook-f fw-normal"></i></a> <a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="bg-dark border-inner text-center p-4">
+							<h4 class="text-uppercase text-primary">박선향</h4>
+							<p class="text-white m-0">국어</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex_box_border">
+					<div class="team-item">
+						<div class="position-relative overflow-hidden">
+							<img class="img-fluid w-100" src="img/teacher/teacher2.png">
+							<div
+								class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+								<div class="d-flex align-items-center justify-content-start">
+									<a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-twitter fw-normal"></i></a> <a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-facebook-f fw-normal"></i></a> <a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="bg-dark border-inner text-center p-4">
+							<h4 class="text-uppercase text-primary">김보라</h4>
+							<p class="text-white m-0">영어</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex_box_border">
+					<div class="team-item">
+						<div class="position-relative overflow-hidden">
+							<img class="img-fluid w-100" src="img/teacher/teacher1.png">
+							<div
+								class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+								<div class="d-flex align-items-center justify-content-start">
+									<a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-twitter fw-normal"></i></a> <a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-facebook-f fw-normal"></i></a> <a
+										class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
+										href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="bg-dark border-inner text-center p-4">
+							<h4 class="text-uppercase text-primary">황혜경</h4>
+							<p class="text-white m-0">수학</p>
+						</div>
 					</div>
 				</div>
 			</div>

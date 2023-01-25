@@ -7,6 +7,7 @@
 <meta content="Free HTML Templates" name="keywords">
 <meta content="Free HTML Templates" name="description">
 
+
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="icon">
 
