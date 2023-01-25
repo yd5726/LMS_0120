@@ -84,6 +84,7 @@ nav ul li ul li {
 
 nav ul li:hover ul {
 	display: block;
+	z-index: 999;	/* 우선순위 적용? */
 }
 
 strong {

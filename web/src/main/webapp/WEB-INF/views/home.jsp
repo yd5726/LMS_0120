@@ -4,103 +4,179 @@
 <head>
 <title>Home</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
-/* .dropbtn {
-	background-color: #04AA6D;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-}
-
-.dropdown {
+#container {
+	/* background-color: #3bbbf3; */
+	width: 100%;
+	overflow: hidden;
+	/* margin-top: 140px; */
 	position: relative;
-	display: inline-block;
 }
 
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
+.main_wrap {
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
 }
 
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
+.sub_wrap {
+	overflow: hidden;
+	padding: 80px 0;
 }
 
-.dropdown-content a:hover {
-	background-color: #ddd;
+.wrap1 {
+	float: left;
+	background-color: black;
+	overflow: hidden;
+	width: 300px;
+	height: 500px;
 }
 
-.dropdown:hover .dropdown-content {
-	display: block;
+.wrap2 {
+	float: right;
+	overflow: hidden;
+	height: 500px;
 }
 
-.dropdown:hover .dropbtn {
-	background-color: #3e8e41;
-} */
+.wrap2_1 {
+	width: 380px;
+	height: 240px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background-color: blue;
+}
+
+.wrap2_2 {
+	float: left;
+	margin-left: 15px;
+	margin-bottom: 15px;
+	width: 270px;
+	height: 240px;
+	background-color: green;
+}
+
+.clr {
+	clear: both;
+	height: 0;
+	overflow: hidden;
+}
 </style>
 <style>
-/* nav {
-	margin: 0 auto;
-	width: 100%;
-	height: auto;
-	display: inline-block;
-	background: #37bc9b;
-}
-
-nav ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	float: left;
-	display: inline-block;
-}
-
-nav ul li {
-	position: relative;
-	margin: 0 20px 0 0;
-	float: left;
-	display: inline-block;
-}
-
-nav ul li a {
-	padding: 20px;
-	display: inline-block;
-	color: white;
-	text-decoration: none;
-}
-
-nav ul li a:hover {
-	opacity: 0.5;
-}
-
-nav ul li ul {
+.mySlides {
 	display: none;
-	position: absolute;
-	left: 0;
-	background: #37bc9b;
-	float: left;
 }
 
-nav ul li ul li {
-	width: 100%;
-	border-bottom: 1px solid rgba(255, 255, 255, .3);
+.slideshow-container {
+	height: 450px;
 }
 
-nav ul li:hover ul {
-	display: block;
-} */
+.mySlides>img {
+	vertical-align: middle;
+}
+
+.dots {
+	text-align: center;
+}
+
+.dot {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.slide_active {
+	background-color: #717171;
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+.fade:not(.show) {
+	opacity: 1;
+}
+
+@
+keyframes fade {
+	from {opacity: .4
+}
+
+to {
+	opacity: 1
+}
+}
 </style>
 <body>
-	<h1>Hello world!</h1>
+	<div id="container">
+		<div class="main_wrap">
+			<div class="sub_wrap">
+				<div class="wrap1">
+					<div class="slideshow-container">
+						<div class="mySlides fade">
+							<img src="img/banner/banner1.png">
+						</div>
+						<div class="mySlides fade">
+							<img src="img/banner/banner2.png">
+						</div>
+						<div class="mySlides fade">
+							<img src="img/banner/banner3.png">
+						</div>
+					</div>
+					<div class="dots">
+						<span class="dot"></span> <span class="dot"></span> <span
+							class="dot"></span>
+					</div>
+				</div>
+				<div class="wrap2">
+					<div class="wrap2_1">
+						<img src="img/banner/banner4.png">
+					</div>
+					<div class="wrap2_2">
+						<img src="img/banner/banner6.png">
+					</div>
+					<div class="clr"></div>
+					<div class="wrap2_1">
+						<img src="img/banner/banner5.png">
+					</div>
+					<div class="wrap2_2">
+						<img src="img/banner/banner7.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		let slideIndex = 0;
+		showSlides();
 
+		function showSlides() {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {
+				slideIndex = 1
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" slide_active",
+						"");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " slide_active";
+			setTimeout(showSlides, 2000);
+		}
+	</script>
 </body>
 </html>
