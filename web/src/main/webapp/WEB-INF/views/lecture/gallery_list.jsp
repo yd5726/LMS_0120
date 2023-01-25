@@ -53,6 +53,7 @@
 	margin-right: 10px;
 	line-height: 50px;
 	font-size: 35px;
+	color: black;
 }
 
 .list_top3>span>input[type="text"] {
@@ -130,27 +131,10 @@
 }
 </style>
 <body>
-	<h1 class="d-none">홈-수강신청-강의목록</h1>
 	<div id="container" class="ct_top">
 		<div class="main_wrap">
-			<h2 class="lnb_title text-center text-dark">강의목록</h2>
-			<ul id="lnb" class="lnb_list">
-				<li id="lnb_enrolment_lecture_all"><a href="#전체"
-					class="btn btn-dark rounded-pill text-white"> 전체 </a></li>
-				<li id="lnb_enrolment_lecture_kor"><a href="#국어"
-					class="btn btn-outline-dark rounded-pill text-dark"> 국어 </a></li>
-				<li id="lnb_enrolment_lecture_eng"><a href="#영어"
-					class="btn btn-outline-dark rounded-pill text-dark"> 영어 </a></li>
-				<li id="lnb_enrolment_lecture_math"><a href="#수학"
-					class="btn btn-outline-dark rounded-pill text-dark"> 수학 </a></li>
-			</ul>
+			<h2 class="lnb_title text-center text-dark">강의 목록</h2>
 			<div id="contet_area">
-				<div class="path">
-					<ol class='path_list'>
-						<li>수강신청</li>
-						<li class="last">강의목록</li>
-					</ol>
-				</div>
 				<div class="content_body">
 					<div class="enrolment_lecture_box">
 						<div class="tb_top">
@@ -175,8 +159,10 @@
 							</div>
 							<div class="list_top2">
 								<div class="btn_sort">
-									<span class="material-symbols-outlined"><a href="privacy.me">gallery_thumbnail</a></span>
-									<span class="material-symbols-outlined"><a href="justlist.le">list_alt</a></span>
+									<span class="material-symbols-outlined"><a
+										href="gallery_list.le">gallery_thumbnail</a></span> <span
+										class="material-symbols-outlined"><a
+										href="just_list.le">list_alt</a></span>
 								</div>
 							</div>
 						</div>

@@ -35,15 +35,18 @@
 	width: 60%;
 	height: 50px;
 	line-height: 50px;
+	background-color: #fff;
 }
 
 .sub_nav2 {
 	width: 40%;
 	height: 50px;
 	line-height: 50px;
+	background-color: #fff;
 }
 
 .sub_nav1>ul>li>span {
+	color: #000;
 	padding-right: 10px;
 }
 
@@ -93,7 +96,7 @@
 }
 
 .portlet-body>.table>thead {
-	background-color: #124567;
+	background-color: #506eaf;
 	border-radius: 10px;
 	color: #fff;
 }
@@ -139,7 +142,7 @@
 }
 
 .open_lecture_table>tbody>tr>th {
-	background-color: #124567;
+	background-color: #293859;
 	color: #fff;
 	padding: 20px;
 }
@@ -173,10 +176,10 @@
 	transition: all .3s ease-in;
 	border-radius: 30px;
 	padding: 10px;
-	background: #124567;
+	background: #293859;
 	color: #fff !important;
 	border-radius: 30px;
-	border: 1px solid #124567;
+	border: 1px solid #293859;
 }
 
 .btn_cs>a:hover {
@@ -200,9 +203,9 @@
 .sub_nav2_btns>li>a {
 	transition: all .3s ease-in;
 	border-radius: 30px;
-	border: 1px solid #124567;
-	padding: 10px;
-	background: #124567;
+	border: 1px solid #506eaf;
+	padding: 0 10px;
+	background: #506eaf;
 	color: #fff !important;
 }
 

@@ -76,6 +76,7 @@ nav ul li ul {
 	left: 0;
 	background-color: #293859;
 	float: left;
+	font-size: 12px;
 }
 
 nav ul li ul li {
@@ -239,16 +240,15 @@ span {
 		<div class="left-items">
 			<ul>
 				<li><a href='<c:url value="/"/>' style="a: hover{ color:#FFF">홈</a></li>
-				<li><a href="#">수강</a></li>
-				<li><a href="#">강의</a>
+				<li><a href="gallery_list.le">수강</a></li>
+				<li><a href="open_lecture.le">강의</a>
 					<ul>
-						<li><a href="#">Graphic</a></li>
-						<li><a href="#">Web</a></li>
+						<li><a href="open_lecture.le">강의<br>개설</a></li>
 					</ul></li>
 				<li><a href="#">게시판</a>
 					<ul>
-						<li><a href="#">Map</a></li>
-						<li><a href="#">Form</a></li>
+						<li><a href="#">공통</a></li>
+						<li><a href="#">자유게시판</a></li>
 					</ul></li>
 			</ul>
 		</div>
@@ -267,10 +267,12 @@ span {
 					<ul>
 						<!-- 로그인 한 경우 -->
 						<c:if test='${empty loginInfo.profilepath}'>
-							<li><a href="mypage.me"><img class='profile' src="img/common/default_profile_img.png"></a></li>
+							<li><a href="mypage.me"><img class='profile'
+									src="img/common/default_profile_img.png"></a></li>
 						</c:if>
 						<c:if test='${not empty loginInfo.profilepath}'>
-							<li><a href="mypage.me"><img class='profile' src='${loginInfo.profilepath}'></a></li>
+							<li><a href="mypage.me"><img class='profile'
+									src='${loginInfo.profilepath}'></a></li>
 						</c:if>
 						<li><strong>${loginInfo.member_name }</strong></li>
 						<li><a href="modify_pw.me">비밀번호변경</a></li>
