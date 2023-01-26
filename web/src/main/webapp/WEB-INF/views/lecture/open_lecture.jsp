@@ -37,6 +37,8 @@
 	height: 50px;
 	line-height: 50px;
 	background-color: #fff;
+	text-align: left;
+	margin-left: 30px;
 }
 
 .sub_nav2 {
@@ -53,7 +55,7 @@
 
 .sub_nav1>ul>li {
 	float: left;
-	padding: 0 20px; /*수정*/
+	padding: 0 20px;
 }
 
 .sub_nav2>ul>li {
@@ -118,76 +120,6 @@
 	background-color: #d2d2d2;
 }
 
-/* #open_lecture_info_wrap {
-	height: 50px;
-	text-align: left;
-	margin: 10px 30px 0;
-}
-
-.open_lecture_title>h5 {
-	height: 50px;
-	line-height: 50px;
-}
-
-.open_lecture_table {
-	float: left;
-	border: 1px solid #cccccc;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0px 0px 1px #000;
-	margin-left: 30px;
-}
-
-.open_lecture_table tr {
-	border: 1px solid #cccccc;
-}
-
-.open_lecture_table>tbody>tr>th {
-	background-color: #293859;
-	color: #fff;
-	padding: 20px;
-}
-
-.open_lecture_table>tbody>tr>td {
-	width: 300px;
-}
-
-.open_lecture_table>tbody>tr>td>input[type=text], .open_lecture_table>tbody>tr>td>select
-	{
-	width: 90%;
-}
-
-.btn_cs {
-	float: left;
-	height: 200px;
-}
-
-.btn_cs>a:first-child {
-	margin-left: 10px;
-	margin-top: 30px;
-}
-
-.btn_cs>a:last-child {
-	margin-left: 10px;
-	margin-top: 120px;
-}
-
-.btn_cs>a {
-	position: absolute;
-	transition: all .3s ease-in;
-	border-radius: 30px;
-	padding: 10px;
-	background: #293859;
-	color: #fff !important;
-	border-radius: 30px;
-	border: 1px solid #293859;
-}
-.btn_cs>a:hover {
-	background: transparent;
-	color: #124567 !important;
-	border: 1px solid #124567;
-}
-*/
 .sub_nav2_btns {
 	height: 50px;
 }
@@ -229,14 +161,12 @@
 }
 </style>
 <style>
-/* body {font-family: Arial, Helvetica, sans-serif;} */
-
 /* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
-	padding-top: 460px; /* Location of the box */
+	padding-top: 200px; /* Location of the box */
 	left: 0;
 	top: 0;
 	width: 100%; /* Full width */
@@ -250,15 +180,20 @@
 .modal-content {
 	background-color: #fefefe;
 	margin: auto;
-	padding: 20px;
 	border: 1px solid #888;
 	width: 60%;
 	text-align: right;
+	overflow: hidden;
 }
 
 .modal-content h3 {
 	text-align: center;
 	margin-bottom: 20px;
+}
+
+.modal-content span{
+	padding-right: 20px;
+	overflow: hidden;
 }
 
 /* The Close Button */
@@ -386,6 +321,9 @@
 								<td>${vo.timetable_code}</td>
 							</tr>
 						</c:forEach>
+						<c:if test="${empty te_lec_list}">
+							<td colspan="8">검색 조건 해당하는 강의가 없습니다.</td>
+						</c:if>
 					</tbody>
 				</table>
 			</div>
