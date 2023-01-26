@@ -142,11 +142,14 @@ public class LectureController {
 
 	// 강의 개설 화면
 	@RequestMapping("/open_lecture.le")
-	public String open_lecture(Model model, String member_code,String select_subject, String select_year) {
+	public String open_lecture(HttpSession session, Model model, String member_code, String select_subject, String select_year) {
 		HashMap<String, String> tempMap = new HashMap<String, String>();
 		tempMap.put("member_code", member_code);
 		tempMap.put("select_year", select_year);
 		tempMap.put("select_subject", select_subject);
+		
+		session.setAttribute("select_year", select_year);
+		session.setAttribute("select_subject", select_subject);
 		
 		List<LectureVO> te_lec_list = service.te_lec_list(tempMap);
 		model.addAttribute("te_lec_list", te_lec_list);

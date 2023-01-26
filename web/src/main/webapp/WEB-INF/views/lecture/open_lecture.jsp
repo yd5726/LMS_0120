@@ -216,36 +216,25 @@
 			<div class="sub_nav_wrap">
 				<nav class="sub_nav1">
 					<ul>
-						<form id="searchForm" action="open_lecture.le" method="get" style="display: inline-block;">
-							<input type="hidden" name="member_code" value="${loginInfo.member_code}">
-							<li><span>개설년도</span> 
-								<span>
-									 <select name="select_year">
-											<option value="">전체</option>
-											<option value="2023">2023</option>
-											<option value="2022">2022</option>
-									</select>
-								</span>
-							</li>
-							<li><span>과목</span>
-								<span>
-									<%-- <form id="searchForm" action="open_lecture.le" method="get" style="display: inline-block;">
-										<input type="hidden" name="member_code" value="${loginInfo.member_code}">
-										<select name="select_subject">
-											<option>전체</option>
-											<option value="KOR">국어</option>
-											<option value="MATH">수학</option>
-											<option value="ENG">영어</option>
-										</select>
-									</form> --%>
-									<select name="select_subject">
-										<option value="">전체</option>
-										<option value="KOR">국어</option>
-										<option value="MATH">수학</option>
-										<option value="ENG">영어</option>
-									</select>
-							</span>
-							</li>
+						<form id="searchForm" action="open_lecture.le" method="get"
+							style="display: inline-block;">
+							<input type="hidden" name="member_code"
+								value="${loginInfo.member_code}">
+							<li><span>개설년도</span> <span> <select
+									name="select_year">
+										<option value="" ${select_year eq '' ? 'selected':''}>전체</option>
+										<option value="2023" ${select_year eq '2023' ? 'selected':''}>2023</option>
+										<option value="2022" ${select_year eq '2022' ? 'selected':''}>2022</option>
+								</select>
+							</span></li>
+							<li><span>과목</span> <span><select
+									name="select_subject">
+										<option value="" ${select_subject eq '' ? 'selected':''}>전체</option>
+										<option value="KOR" ${select_subject eq 'KOR' ? 'selected':''}>국어</option>
+										<option value="MATH"
+											${select_subject eq 'MATH' ? 'selected':''}>수학</option>
+										<option value="ENG" ${select_subject eq 'ENG' ? 'selected':''}>영어</option>
+								</select> </span></li>
 						</form>
 					</ul>
 				</nav>
@@ -312,7 +301,7 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<script>
 		var searchForm = $('#searchForm');
-		$('#search_btn').on("click", function(e){
+		$('#search_btn').on("click", function(e) {
 			searchForm.submit();
 		});
 	</script>
