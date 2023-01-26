@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -229,27 +230,31 @@
 									<option>2023</option>
 									<option>2022</option>
 							</select></span></li>
-						<li><span>과목</span> <span> <select
-								class="select_subject">
-									<option>전체</option>
-									<option>국어</option>
-									<option>수학</option>
-									<option>영어</option>
-							</select></span></li>
-						<li><span>강사명</span> <span> <select
+						<li><span>과목</span> <span>
+								<form id="searchForm" action="open_lecture.le" method="get" style="display: inline-block;">
+									<input type="hidden" name="member_code" value="${loginInfo.member_code }">
+									<select name="select_subject">
+										<option>전체</option>
+										<option value="KOR">국어</option>
+										<option value="MATH">수학</option>
+										<option value="ENG">영어</option>
+									</select>
+								</form>
+						</span></li>
+						<li><span>강사</span> <span> <select
 								class="select_teacher">
 									<option>전체</option>
-									<option>강사이름1</option>
+									<option>강사1</option>
 									<option>강사이름2</option>
 							</select></span></li>
 					</ul>
 				</nav>
 				<nav class="sub_nav2">
 					<ul class="sub_nav2_btns">
-						<li><a>삭제</a></li>
-						<li><a>수정</a></li>
+						<!-- <li><a>삭제</a></li>
+						<li><a>수정</a></li> -->
 						<li><a>등록</a></li>
-						<li><a>조회</a></li>
+						<li><a id="search_btn">조회</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -276,7 +281,7 @@
 					</colgroup>
 					<thead>
 						<tr>
-							<th>순번</th>
+							<th>코드</th>
 							<th>강의명</th>
 							<th>시작일</th>
 							<th>종료일</th>
@@ -287,88 +292,29 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th>1</th>
-							<td>고1 수학</td>
-							<td>23/01/02</td>
-							<td>23/01/27</td>
-							<td>101호</td>
-							<td>강사1</td>
-							<td>수학</td>
-							<td>1</td>
-						</tr>
-						<tr>
-							<th>12</th>
-							<td>고2 영어</td>
-							<td>23/01/02</td>
-							<td>23/01/27</td>
-							<td>101호</td>
-							<td>강사1</td>
-							<td>수학</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<th>25</th>
-							<td>고3 수학</td>
-							<td>23/01/02</td>
-							<td>23/01/27</td>
-							<td>101호</td>
-							<td>강사1</td>
-							<td>국어</td>
-							<td>3</td>
-						</tr>
+						<c:forEach items='${te_lec_list}' var='vo'>
+							<tr>
+								<th>${vo.lecture_code}</th>
+								<td>${vo.lecture_name}</td>
+								<td>${vo.startdate}</td>
+								<td>${vo.enddate}</td>
+								<td>${vo.room_code}</td>
+								<td>${vo.teacher_name}</td>
+								<td>${vo.subject_code}</td>
+								<td>${vo.timetable_code}</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
-			</div>
-			<div id="open_lecture_info_wrap">
-				<div class="open_lecture_title">
-					<h5>개설강의 상세정보</h5>
-				</div>
-			</div>
-			<table class="open_lecture_table">
-				<tr>
-					<th>강의명</th>
-					<td><input type="text" placeholder="고2 수학"></td>
-				</tr>
-				<tr>
-					<th>시작일</th>
-					<td><input type='text' name='startdate' class='date' readonly></td>
-				</tr>
-				<tr>
-					<th>종료일</th>
-					<td><input type='text' name='enddate' class='date' readonly></td>
-				</tr>
-			</table>
-			<table class="open_lecture_table">
-				<tr>
-					<th>강사이름</th>
-					<td><select class="select_tname">
-							<option>강사이름1</option>
-							<option>강사이름2</option>
-					</select></td>
-				</tr>
-				<tr>
-					<th>강의실</th>
-					<td><select class="select_room">
-							<option>R101</option>
-							<option>R201</option>
-					</select></td>
-				</tr>
-				<tr>
-					<th>교시</th>
-					<td><select class="select_tt">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-					</select></td>
-				</tr>
-			</table>
-			<div class="btn_cs">
-				<a>취소</a> <a>저장</a>
 			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script>
+		var searchForm = $('#searchForm');
+		$('#search_btn').on("click", function(e){
+			searchForm.submit();
+		});
+	</script>
 </body>
 </html>

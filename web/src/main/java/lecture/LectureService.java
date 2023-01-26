@@ -3,8 +3,6 @@ package lecture;
 import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.ui.Model;
-
 import vo.BoardVO;
 import vo.ExamVO;
 import vo.HomeworkVO;
@@ -20,4 +18,7 @@ public interface LectureService {
 	HomeworkVO homework_info(HashMap<String, Object> map);
 	List<BoardVO> video_list(int lecture_code); //강의영상 리스트 조회
 	List<ExamVO> exam_list(HashMap<String, Object> map); //시험목록 조회
+	
+	//List<LectureVO> te_lec_list(int member_code); //강사가 개설한 강의 리스트 조회
+	List<LectureVO> te_lec_list(HashMap<String, String> tempMap);
 }

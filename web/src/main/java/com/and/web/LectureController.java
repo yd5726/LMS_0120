@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lecture.LectureServiceImple;
+import member.MemberServiceImpl;
 import vo.BoardVO;
 import vo.ExamVO;
 import vo.HomeworkVO;
@@ -141,7 +142,18 @@ public class LectureController {
 
 	// 강의 개설 화면
 	@RequestMapping("/open_lecture.le")
-	public String open_lecture(HttpSession session) {
+	public String open_lecture(Model model, String member_code , String select_subject) {//..년도 등등
+		HashMap<String, String> tempMap = new HashMap<String, String>();
+		// type이 만약에 null인경우 mybatis맵퍼에서 jdbcType=Varchar 이거 해주든가 아니면 default 값 주던가 ↑
+		tempMap.put("member_code", member_code);	
+		tempMap.put("select_subject", select_subject);
+		
+		//List<LectureVO> te_lec_list = service.te_lec_list(member_code);
+		//model.addAttribute("te_lec_list", te_lec_list);
+		
+		List<LectureVO> te_lec_list = service.te_lec_list(tempMap);
+		model.addAttribute("te_lec_list", te_lec_list);
+		
 		// 응답화면연결
 		return "lecture/open_lecture";
 	}

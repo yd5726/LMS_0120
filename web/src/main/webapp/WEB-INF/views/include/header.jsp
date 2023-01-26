@@ -241,7 +241,7 @@ span {
 			<ul>
 				<li><a href='<c:url value="/"/>' style="a: hover{ color:#FFF">홈</a></li>
 				<li><a href="gallery_list.le">수강</a></li>
-				<li><a href="open_lecture.le">강의</a>
+				<li><a href="open_lecture.le?member_code=${loginInfo.member_code}">강의</a>
 					<ul>
 						<li><a href="open_lecture.le">강의<br>개설</a></li>
 					</ul></li>

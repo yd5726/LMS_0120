@@ -75,4 +75,38 @@
 		    and member_code = #{member_code}
 		    order by startdate desc) e
 	</select>
+	
+<!-- 강사가 개설한 강의 리스트 조회 -->
+<select id="te_lec_list" resultType="vo.LectureVO">
+<!-- select * from lecture where teacher_code = #{member_code} -->
+
+<!-- select l.lecture_code, l.lecture_name
+, l.startdate, l.enddate, l.room_code, m.member_name teacher_name
+, l.subject_code, l.timetable_code
+from lecture l, member m
+where l.teacher_code = m.member_code
+and teacher_code = #{member_code}
+order by 1 -->
+
+<!-- select l.lecture_code, l.lecture_name
+, l.startdate, l.enddate, l.room_code, m.member_name teacher_name
+, l.subject_code, l.timetable_code
+from lecture l, member m
+where l.teacher_code = m.member_code
+and teacher_code = 5
+and subject_code = #{select_subject, jdbcType=VARCHAR}
+order by 1 -->
+
+select l.lecture_code, l.lecture_name
+, l.startdate, l.enddate, l.room_code, m.member_name teacher_name
+, l.subject_code, l.timetable_code
+from lecture l, member m
+where l.teacher_code = m.member_code
+and teacher_code = (select member_code 
+from member 
+where type='TEACH'
+and member_code = #{member_code})
+and subject_code = #{select_subject, jdbcType=VARCHAR}
+order by 1
+</select>
 </mapper>
