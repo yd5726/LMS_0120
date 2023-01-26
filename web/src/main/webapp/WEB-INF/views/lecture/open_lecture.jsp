@@ -189,14 +189,6 @@
 	border: 1px solid #124567;
 }
 
-/* .btn_cs>a:first-child {
-	bottom: 28.5%;
-}
-
-.btn_cs>a:last-child {
-	bottom: 12%;
-}
- */
 .sub_nav2_btns {
 	height: 50px;
 }
@@ -224,29 +216,37 @@
 			<div class="sub_nav_wrap">
 				<nav class="sub_nav1">
 					<ul>
-						<li><span>개설년도</span> <span> <select
-								class="select_year">
-									<option>전체</option>
-									<option>2023</option>
-									<option>2022</option>
-							</select></span></li>
-						<li><span>과목</span> <span>
-								<form id="searchForm" action="open_lecture.le" method="get" style="display: inline-block;">
-									<input type="hidden" name="member_code" value="${loginInfo.member_code }">
+						<form id="searchForm" action="open_lecture.le" method="get" style="display: inline-block;">
+							<input type="hidden" name="member_code" value="${loginInfo.member_code}">
+							<li><span>개설년도</span> 
+								<span>
+									 <select name="select_year">
+											<option value="">전체</option>
+											<option value="2023">2023</option>
+											<option value="2022">2022</option>
+									</select>
+								</span>
+							</li>
+							<li><span>과목</span>
+								<span>
+									<%-- <form id="searchForm" action="open_lecture.le" method="get" style="display: inline-block;">
+										<input type="hidden" name="member_code" value="${loginInfo.member_code}">
+										<select name="select_subject">
+											<option>전체</option>
+											<option value="KOR">국어</option>
+											<option value="MATH">수학</option>
+											<option value="ENG">영어</option>
+										</select>
+									</form> --%>
 									<select name="select_subject">
-										<option>전체</option>
+										<option value="">전체</option>
 										<option value="KOR">국어</option>
 										<option value="MATH">수학</option>
 										<option value="ENG">영어</option>
 									</select>
-								</form>
-						</span></li>
-						<li><span>강사</span> <span> <select
-								class="select_teacher">
-									<option>전체</option>
-									<option>강사1</option>
-									<option>강사이름2</option>
-							</select></span></li>
+							</span>
+							</li>
+						</form>
 					</ul>
 				</nav>
 				<nav class="sub_nav2">

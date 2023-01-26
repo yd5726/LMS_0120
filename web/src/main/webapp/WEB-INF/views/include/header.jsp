@@ -93,10 +93,6 @@ strong {
 	color: #fff;
 }
 
-span {
-	color: #fff;
-}
-
 .text_main {
 	color: #1d273d;
 }
