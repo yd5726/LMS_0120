@@ -63,4 +63,9 @@ public class LectureServiceImple  implements LectureService {
 		return dao.te_lec_list(tempMap);
 	}
 
+	@Override
+	public int open_new_lecture(LectureVO lecturevo) {
+		return dao.open_new_lecture(lecturevo);
+	}
+
 }

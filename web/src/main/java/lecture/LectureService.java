@@ -19,6 +19,7 @@ public interface LectureService {
 	List<BoardVO> video_list(int lecture_code); //강의영상 리스트 조회
 	List<ExamVO> exam_list(HashMap<String, Object> map); //시험목록 조회
 	
-	//List<LectureVO> te_lec_list(int member_code); //강사가 개설한 강의 리스트 조회
-	List<LectureVO> te_lec_list(HashMap<String, String> tempMap);
+	List<LectureVO> te_lec_list(HashMap<String, String> tempMap); //로그인한 강사의 개설 강의 목록 조회-kmj
+	int open_new_lecture(LectureVO lecturevo);				     //로그인한 강사가 강의 개설-kmj
+	
 }

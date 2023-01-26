@@ -118,7 +118,7 @@
 	background-color: #d2d2d2;
 }
 
-#open_lecture_info_wrap {
+/* #open_lecture_info_wrap {
 	height: 50px;
 	text-align: left;
 	margin: 10px 30px 0;
@@ -182,13 +182,12 @@
 	border-radius: 30px;
 	border: 1px solid #293859;
 }
-
 .btn_cs>a:hover {
 	background: transparent;
 	color: #124567 !important;
 	border: 1px solid #124567;
 }
-
+*/
 .sub_nav2_btns {
 	height: 50px;
 }
@@ -206,6 +205,99 @@
 	background: transparent;
 	color: #124567 !important;
 	border: 1px solid #124567;
+}
+
+.btn_cs {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.btn_cs a {
+	transition: all .3s ease-in;
+	border-radius: 5px;
+	padding: 10px 20px;
+	background: #293859;
+	color: #fff !important;
+	border: 1px solid #293859;
+	margin: 10px;
+}
+
+.btn_cs>a:hover {
+	background: transparent;
+	color: #124567 !important;
+	border: 1px solid #124567;
+}
+</style>
+<style>
+/* body {font-family: Arial, Helvetica, sans-serif;} */
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 460px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 60%;
+	text-align: right;
+}
+
+.modal-content h3 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#open_lec_table {
+	text-align: left;
+	margin: 0 auto;
+}
+
+#open_lec_table>tbody>tr {
+	border: 1px solid #cccccc;
+}
+
+#open_lec_table>tbody>tr>th {
+	background-color: #293859;
+	text-align: center;
+	color: #fff;
+	padding: 10px 20px;
+}
+
+#open_lec_table>tbody>tr>td {
+	padding: 10px;
+}
+
+#open_lec_table>tbody>tr>td>input[type=date], #open_lec_table>tbody>tr>td>select
+	{
+	width: 100%;
 }
 </style>
 </head>
@@ -240,16 +332,17 @@
 				</nav>
 				<nav class="sub_nav2">
 					<ul class="sub_nav2_btns">
-						<!-- <li><a>삭제</a></li>
-						<li><a>수정</a></li> -->
-						<li><a>등록</a></li>
+						<li><a>삭제</a></li>
+						<li><a>수정</a></li>
+						<!-- Trigger/Open The Modal -->
+						<li><a id="myBtn">등록</a></li>
 						<li><a id="search_btn">조회</a></li>
 					</ul>
 				</nav>
 			</div>
 			<div id="open_lecture_list_wrap">
 				<div class="open_lecture_list1">
-					<h5>개설강의 목록</h5>
+					<h5>강의 목록</h5>
 				</div>
 				<div class="open_lecture_list2">
 					<span><i class="fa-solid fa-caret-left"></i></span> <span>1</span>
@@ -296,6 +389,51 @@
 					</tbody>
 				</table>
 			</div>
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<h3>강의 개설</h3>
+					<form id="en_lecForm" action="open_new_lecture" method="get">
+					<table id="open_lec_table">
+						<tr>
+							<th>강의명</th>
+							<td><input type="text" name="lecture_name"></td>
+							<th>강사명</th>
+							<td><input type="text" value="${loginInfo.member_name}"
+								readonly style="border: none;" name="teacher_name"></td>
+						</tr>
+						<tr>
+							<th>시작일</th>
+							<td><input type="date" name="startdate"></td>
+							<th>종료일</th>
+							<td><input type="date" name="enddate"></td>
+						</tr>
+						<tr>
+							<th>강의실</th>
+							<td><select name="select_room">
+									<option value="R101">R101</option>
+									<option value="R201">R201</option>
+									<option value="R301">R301</option>
+									<option value="R401">R401</option>
+							</select></td>
+							<th>교시</th>
+							<td><select name="select_tt">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+							</select></td>
+						</tr>
+					</table>
+					</form>
+					<div class="btn_cs">
+						<a class="btn_cs_cancel">취소</a>
+						<a id="btn_cs_save">저장</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -304,6 +442,41 @@
 		$('#search_btn').on("click", function(e) {
 			searchForm.submit();
 		});
+		$('.btn_cs_cancel').on('click', function(){
+			//history.go(-1);
+			modal.style.display = "none";
+		});
+		var en_lecForm = $('#en_lecForm');
+		$('#btn_cs_save').on("click", function(e) {
+			en_lecForm.submit();
+		});
+	</script>
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal 
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
 	</script>
 </body>
 </html>

@@ -63,4 +63,9 @@ public class LectureDAO implements LectureService {
 	public List<LectureVO> te_lec_list(HashMap<String, String> tempMap) {
 		return sql.selectList("lecture.te_lec_list", tempMap);
 	}
+
+	@Override
+	public int open_new_lecture(LectureVO lecturevo) {
+		return sql.insert("lecture.open_new_lecture", lecturevo);
+	}
 }
