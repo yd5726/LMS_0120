@@ -361,12 +361,12 @@
 								<th>시작일</th>
 								<td>
 									<!-- <input type="date" name="startdate"> -->
-									 <input	type="text" id="sdate" name="startdate">
+									 <input	type="text" id="en_sdate" name="startdate">
 								</td>
 								<th>종료일</th>
 								<td>
 									<!-- <input type="date" name="enddate"> -->
-									<input type="text" id="edate" name="enddate">
+									<input type="text" id="en_edate" name="enddate">
 								</td>
 							</tr>
 							<tr>
@@ -421,9 +421,15 @@
 							</tr>
 							<tr>
 								<th>시작일</th>
-								<td><input type="date" name="startdate"></td>
+								<td>
+									<!-- <input type="date" name="startdate"> -->
+									<input	type="text" id="mo_sdate" name="startdate">
+								</td>
 								<th>종료일</th>
-								<td><input type="date" name="enddate"></td>
+								<td>
+									<!-- <input type="date" name="enddate"> -->
+									<input type="text" id="mo_edate" name="enddate">
+								</td>
 							</tr>
 							<tr>
 								<th>강의실</th>
@@ -504,7 +510,6 @@
 		// Get the modal
 		var modal_mo = document.getElementById("myModal_mo");
 
-		// Get the button that opens the modal
 		var mo_btn = document.getElementById("mo_btn");
 
 		// Get the <span> element that closes the modal
@@ -557,16 +562,30 @@
 	    };
 	    $.datepicker.setDefaults($.datepicker.regional['ko']);
 
-	    $('#sdate').datepicker();
-	    $('#sdate').datepicker("option", "maxDate", $("#edate").val());
-	    $('#sdate').datepicker("option", "onClose", function ( selectedDate ) {
-	        $("#edate").datepicker( "option", "minDate", selectedDate );
+	    /* 등록 */
+	    $('#en_sdate').datepicker();
+	    $('#en_sdate').datepicker("option", "maxDate", $("#en_edate").val());
+	    $('#en_sdate').datepicker("option", "onClose", function ( selectedDate ) {
+	        $("#en_edate").datepicker( "option", "minDate", selectedDate );
 	    });
 
-	    $('#edate').datepicker();
-	    $('#edate').datepicker("option", "minDate", $("#sdate").val());
-	    $('#edate').datepicker("option", "onClose", function ( selectedDate ) {
-	        $("#sdate").datepicker( "option", "maxDate", selectedDate );
+	    $('#en_edate').datepicker();
+	    $('#en_edate').datepicker("option", "minDate", $("#en_sdate").val());
+	    $('#en_edate').datepicker("option", "onClose", function ( selectedDate ) {
+	        $("#en_sdate").datepicker( "option", "maxDate", selectedDate );
+	    });
+	    
+	    /* 수정 */
+	    $('#mo_sdate').datepicker();
+	    $('#mo_sdate').datepicker("option", "maxDate", $("#en_edate").val());
+	    $('#mo_sdate').datepicker("option", "onClose", function ( selectedDate ) {
+	        $("#mo_edate").datepicker( "option", "minDate", selectedDate );
+	    });
+
+	    $('#mo_edate').datepicker();
+	    $('#mo_edate').datepicker("option", "minDate", $("#mo_sdate").val());
+	    $('#mo_edate').datepicker("option", "onClose", function ( selectedDate ) {
+	        $("#mo_sdate").datepicker( "option", "maxDate", selectedDate );
 	    });
 	});
 	<!-- datepicker end -->
