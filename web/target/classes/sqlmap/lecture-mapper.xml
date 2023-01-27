@@ -98,7 +98,9 @@ order by 1
 
 <!-- 로그인한 강사가 강의 개설 -->
 <insert id="open_new_lecture">
-insert into lecture(lecture_code, lecture_name, teacher_code, startdate, enddate, room_code, subject_code, timetable_code)
-values(SEQ_LECTURE.nextval, #{lecture_name}, #{teacher_name}, #{startdate}, #{enddate}, #{select_room},#{select_tt})
+insert into lecture(lecture_code, lecture_name, teacher_code, 
+startdate, enddate, room_code, subject_code, timetable_code)
+values(SEQ_LECTURE.nextval, #{lecture_name}, #{teacher_code}, 
+#{startdate}, #{enddate}, #{room_code},#{subject_code},#{timetable_code})
 </insert>
 </mapper>

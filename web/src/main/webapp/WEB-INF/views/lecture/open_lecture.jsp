@@ -16,6 +16,7 @@
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
+	min-height: 700px;
 }
 
 .main_wrap {
@@ -191,7 +192,7 @@
 	margin-bottom: 20px;
 }
 
-.modal-content span{
+.modal-content span {
 	padding-right: 20px;
 	overflow: hidden;
 }
@@ -334,41 +335,50 @@
 					<span class="close">&times;</span>
 					<h3>강의 개설</h3>
 					<form id="en_lecForm" action="open_new_lecture" method="get">
-					<table id="open_lec_table">
-						<tr>
-							<th>강의명</th>
-							<td><input type="text" name="lecture_name"></td>
-							<th>강사명</th>
-							<td><input type="text" value="${loginInfo.member_name}"
-								readonly style="border: none;" name="teacher_name"></td>
-						</tr>
-						<tr>
-							<th>시작일</th>
-							<td><input type="date" name="startdate"></td>
-							<th>종료일</th>
-							<td><input type="date" name="enddate"></td>
-						</tr>
-						<tr>
-							<th>강의실</th>
-							<td><select name="select_room">
-									<option value="R101">R101</option>
-									<option value="R201">R201</option>
-									<option value="R301">R301</option>
-									<option value="R401">R401</option>
-							</select></td>
-							<th>교시</th>
-							<td><select name="select_tt">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-							</select></td>
-						</tr>
-					</table>
+						<input type="hidden" name="teacher_code"
+							value="${loginInfo.member_code}">
+						<table id="open_lec_table">
+							<tr>
+								<th>강의명</th>
+								<td colspan="4"><input type="text" name="lecture_name" style="width: 100%;"></td>
+							</tr>
+							<tr>
+								<th>과목명</th>
+								<td><select name="subject_code">
+										<option value="KOR">국어</option>
+										<option value="ENG">영어</option>
+										<option value="MATH">수학</option>
+								</select></td>
+								<th>강사명</th>
+								<td><input type="text" value="${loginInfo.member_name}"
+									readonly style="border: none;" name="teacher_name"></td>
+							</tr>
+							<tr>
+								<th>시작일</th>
+								<td><input type="date" name="startdate"></td>
+								<th>종료일</th>
+								<td><input type="date" name="enddate"></td>
+							</tr>
+							<tr>
+								<th>강의실</th>
+								<td><select name="room_code">
+										<option value="R101">R101</option>
+										<option value="R201">R201</option>
+										<option value="R301">R301</option>
+										<option value="R401">R401</option>
+								</select></td>
+								<th>교시</th>
+								<td><select name="timetable_code">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+								</select></td>
+							</tr>
+						</table>
 					</form>
 					<div class="btn_cs">
-						<a class="btn_cs_cancel">취소</a>
-						<a id="btn_cs_save">저장</a>
+						<a class="btn_cs_cancel">취소</a> <a id="btn_cs_save">저장</a>
 					</div>
 				</div>
 			</div>
@@ -380,7 +390,7 @@
 		$('#search_btn').on("click", function(e) {
 			searchForm.submit();
 		});
-		$('.btn_cs_cancel').on('click', function(){
+		$('.btn_cs_cancel').on('click', function() {
 			//history.go(-1);
 			modal.style.display = "none";
 		});
