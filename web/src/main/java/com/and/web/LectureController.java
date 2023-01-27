@@ -159,10 +159,22 @@ public class LectureController {
 		return "lecture/open_lecture";
 	}
 	
-	// 로그인한 강사가 강의 개설 - kmj
+	// 로그인한 강사가 강의 개설 버튼 클릭 시 - kmj
 	@RequestMapping("/open_new_lecture")
 	public String open_new_lecture(LectureVO lecturevo, HttpSession session) {
 		service.open_new_lecture(lecturevo);
+		
+		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+		int mem_code = vo.getMember_code();
+		
+		// 응답화면연결
+		return "redirect:/open_lecture.le?member_code="+mem_code;
+	}
+	
+	// 로그인한 강사가 개설 강의 수정 버튼 클릭 시 - kmj
+	@RequestMapping("/modify_lecture")
+	public String modify_lecture(LectureVO lecturevo, HttpSession session) {
+		service.modify_lecture(lecturevo);
 		
 		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
 		int mem_code = vo.getMember_code();
