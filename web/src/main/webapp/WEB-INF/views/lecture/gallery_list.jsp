@@ -70,6 +70,7 @@
 	width: 1200px;
 	height: 330px;
 	margin: 0 auto;
+	border-top: 1px solid #000;
 }
 
 .profile_card {
@@ -89,7 +90,7 @@
 
 .upper-container {
 	height: 50px;
-	background: #7F00FF;
+	background: #293859;
 }
 
 .lower-container {
@@ -103,8 +104,8 @@
 }
 
 .lower-container h6 {
-	color: #7F00FF;
-	opacity: .6;
+	color: #293859;;
+	opacity: .9;
 }
 
 .lower-container>div>img {
@@ -114,7 +115,7 @@
 
 .lower-container .btn {
 	padding: 12px 20px;
-	background: #7F00FF;
+	background: #293859;
 	border: none;
 	color: white;
 	border-radius: 30px;
@@ -126,8 +127,8 @@
 
 .lower-container .btn:hover {
 	background: transparent;
-	color: #7F00FF;
-	border: 2px solid #7F00FF;
+	color: #293859;
+	border: 2px solid #293859;
 }
 </style>
 <body>
@@ -173,33 +174,14 @@
 										<div class="upper-container"></div>
 										<div class="lower-container">
 											<div>
-												<h6>귀에 쏙 꽂히는 영어강의 No.1!!!</h6>
+												<h6>귀에 쏙 꽂히는 국어강의 No.1!!!</h6>
 												<h4>주혜연 선생님</h4>
 											</div>
 											<div>
-												<img src="img/teacher/et01.png">
+												<img src="img/teacher/kt.jpg">
 											</div>
 											<div>
 												<a href="en_lec_detail.le" class="btn">상세보기</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="profile_card">
-								<div class="cards">
-									<div class="cards-container">
-										<div class="upper-container"></div>
-										<div class="lower-container">
-											<div>
-												<h6>모든 유형의 영어 마스터 허준석</h6>
-												<h4>허준석 선생님</h4>
-											</div>
-											<div>
-												<img src="img/teacher/et02.png">
-											</div>
-											<div>
-												<a href="#" class="btn">상세보기</a>
 											</div>
 										</div>
 									</div>
@@ -215,7 +197,7 @@
 												<h4>김보라 선생님</h4>
 											</div>
 											<div>
-												<img src="img/teacher/et01.png">
+												<img src="img/teacher/et.jpg">
 											</div>
 											<div>
 												<a href="#" class="btn">상세보기</a>
@@ -234,7 +216,7 @@
 												<h4>황혜경 선생님</h4>
 											</div>
 											<div>
-												<img src="img/teacher/et01.png">
+												<img src="img/teacher/mt.jpg">
 											</div>
 											<div>
 												<a href="#" class="btn">상세보기</a>
