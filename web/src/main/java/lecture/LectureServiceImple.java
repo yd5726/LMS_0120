@@ -78,4 +78,8 @@ public class LectureServiceImple  implements LectureService {
 		return dao.lecture_code_list();
 	}
 
+	@Override
+	public void delete_lecture(int lecture_code) {
+		dao.delete_lecture(lecture_code);
+	}
 }

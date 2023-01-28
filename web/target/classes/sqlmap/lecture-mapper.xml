@@ -121,4 +121,8 @@ and lecture_code = #{lecture_code}
 <select id="lecture_code_list" resultType="vo.LectureVO">
 select lecture_code from lecture order by lecture_code
 </select>
+
+<delete id="delete_lecture">
+delete from lecture where lecture_code = #{lecture_code}
+</delete>
 </mapper>

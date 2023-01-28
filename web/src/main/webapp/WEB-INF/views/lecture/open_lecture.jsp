@@ -168,7 +168,7 @@
 }
 </style>
 <style>
-.modal_en, .modal_mo {
+.modal_en, .modal_mo, .modal_del {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
@@ -460,6 +460,34 @@
 				</div>
 			</div>
 			<!-- The Modal : 수정 - END -->
+			<!-- The Modal : 삭제 -->
+			<div id="myModal_del" class="modal_del">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close close_del">&times;</span>
+					<h3>강의 삭제</h3>
+					<form id="del_lecForm" action="delete_lecture" method="get">
+						<input type="hidden" name="teacher_code"
+							value="${loginInfo.member_code}">
+						<table id="open_lec_table">
+							<tr>
+								<th>강의코드</th>
+								<td>
+									<select name="lecture_code">
+										<c:forEach items="${lec_code_list}" var="l">
+											<option value="${l.lecture_code}">${l.lecture_code}</option>
+										</c:forEach>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<div class="btn_cs">
+						<a class="btn_cs_del_cancel">취소</a> <a id="btn_cs_del_save">확인</a>
+					</div>
+				</div>
+			</div>
+			<!-- The Modal : 삭제 - END -->
 		</div>
 	</div>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -489,9 +517,12 @@
 		});
 
 		/* 삭제 */
-		$('#del_btn').on("click", function(e) {
-			//강의 코드 입력 후, 삭제 누르면 삭제
-			
+		$('.btn_cs_del_cancel').on('click', function() {
+			modal_del.style.display = "none";
+		});
+		var del_lecForm = $('#del_lecForm');
+		$('#btn_cs_del_save').on("click", function(e) {
+			del_lecForm.submit();
 		});
 	</script>
 	<script>
@@ -534,6 +565,32 @@
 		window.onclick = function(event) {
 			if (event.target == modal_mo) {
 				modal_mo.style.display = "none";
+			}
+		}
+		
+		<!-- The Modal : 삭제 -->
+		// Get the modal
+		var modal_del = document.getElementById("myModal_del");
+
+		var del_btn = document.getElementById("del_btn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close_del")[0];
+
+		// When the user clicks the button, open the modal 
+		del_btn.onclick = function() {
+			modal_del.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal_del.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal_del) {
+				modal_del.style.display = "none";
 			}
 		}
 	</script>
