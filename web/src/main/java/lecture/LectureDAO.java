@@ -75,13 +75,13 @@ public class LectureDAO implements LectureService {
 	}
 
 	@Override
-	public List<LectureVO> lecture_code_list() {
-		return sql.selectList("lecture.lecture_code_list");
-	}
-
-	@Override
 	public void delete_lecture(int lecture_code) {
 		sql.delete("lecture.delete_lecture", lecture_code);
 		
+	}
+
+	@Override
+	public List<LectureVO> lecture_code_list(int teacher_code) {
+		return sql.selectList("lecture.lecture_code_list",teacher_code);
 	}
 }

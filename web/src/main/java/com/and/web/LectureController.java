@@ -153,7 +153,7 @@ public class LectureController {
 		List<LectureVO> te_lec_list = service.te_lec_list(tempMap);
 		model.addAttribute("te_lec_list", te_lec_list);
 		// 강의코드 목록을 조회한다
-		model.addAttribute("lec_code_list", service.lecture_code_list());
+		model.addAttribute("lec_code_list", service.lecture_code_list(Integer.parseInt(member_code)));
 		
 		// 응답화면연결
 		return "lecture/open_lecture";

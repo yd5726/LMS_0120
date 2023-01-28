@@ -191,12 +191,28 @@
 	overflow: hidden;
 }
 
+.modal-content2 {
+	background-color: #fefefe;
+	margin: auto;
+	border: 1px solid #888;
+	width: 30%;
+	text-align: right;
+	overflow: hidden;
+}
+
 .modal-content h3 {
 	text-align: center;
 	margin-bottom: 20px;
 }
 
-.modal-content span {
+.modal-content2 h3{
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	margin-left: 40px;
+}
+
+.modal-content span, .modal-content2 span {
 	padding-right: 20px;
 	overflow: hidden;
 }
@@ -399,7 +415,7 @@
 				<div class="modal-content">
 					<span class="close close_mo">&times;</span>
 					<h3>강의 정보 수정</h3>
-					<form id="mo_lecForm" action="modify_lecture" method="get">
+					<form id="mo_lecForm" action="modify_lecture" method="post">
 						<input type="hidden" name="teacher_code"
 							value="${loginInfo.member_code}">
 						<table id="open_lec_table">
@@ -463,10 +479,10 @@
 			<!-- The Modal : 삭제 -->
 			<div id="myModal_del" class="modal_del">
 				<!-- Modal content -->
-				<div class="modal-content">
+				<div class="modal-content2">
 					<span class="close close_del">&times;</span>
 					<h3>강의 삭제</h3>
-					<form id="del_lecForm" action="delete_lecture" method="get">
+					<form id="del_lecForm" action="delete_lecture" method="post">
 						<input type="hidden" name="teacher_code"
 							value="${loginInfo.member_code}">
 						<table id="open_lec_table">
