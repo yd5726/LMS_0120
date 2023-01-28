@@ -360,13 +360,13 @@
 							<tr>
 								<th>시작일</th>
 								<td>
-									<!-- <input type="date" name="startdate"> -->
-									 <input	type="text" id="en_sdate" name="startdate">
+									<!-- <input type="date" name="startdate"> --> <input
+									type="text" id="en_sdate" name="startdate">
 								</td>
 								<th>종료일</th>
 								<td>
-									<!-- <input type="date" name="enddate"> -->
-									<input type="text" id="en_edate" name="enddate">
+									<!-- <input type="date" name="enddate"> --> <input type="text"
+									id="en_edate" name="enddate">
 								</td>
 							</tr>
 							<tr>
@@ -405,8 +405,13 @@
 						<table id="open_lec_table">
 							<tr>
 								<th>강의코드</th>
-								<td colspan="4"><input type="text" name="lecture_code"
-									style="width: 100%;"></td>
+								<td><select name="lecture_code">
+									<c:forEach items="${lec_code_list}" var="l">
+										<option value="${l.lecture_code}">${l.lecture_code}</option>
+									</c:forEach>
+								</select></td>
+								<th>강의명</th>
+								<td><input type="text" name="lecture_name" style="width: 100%;"></td>
 							</tr>
 							<tr>
 								<th>과목명</th>
@@ -422,13 +427,13 @@
 							<tr>
 								<th>시작일</th>
 								<td>
-									<!-- <input type="date" name="startdate"> -->
-									<input	type="text" id="mo_sdate" name="startdate">
+									<!-- <input type="date" name="startdate"> --> <input
+									type="text" id="mo_sdate" name="startdate">
 								</td>
 								<th>종료일</th>
 								<td>
-									<!-- <input type="date" name="enddate"> -->
-									<input type="text" id="mo_edate" name="enddate">
+									<!-- <input type="date" name="enddate"> --> <input type="text"
+									id="mo_edate" name="enddate">
 								</td>
 							</tr>
 							<tr>
