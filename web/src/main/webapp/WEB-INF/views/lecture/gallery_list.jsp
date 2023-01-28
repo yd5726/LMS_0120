@@ -180,7 +180,7 @@
 												<img src="img/teacher/et01.png">
 											</div>
 											<div>
-												<a href="en_lec_detail.le" class="btn">수강신청</a>
+												<a href="en_lec_detail.le" class="btn">상세보기</a>
 											</div>
 										</div>
 									</div>
@@ -199,7 +199,7 @@
 												<img src="img/teacher/et02.png">
 											</div>
 											<div>
-												<a href="#" class="btn">수강신청</a>
+												<a href="#" class="btn">상세보기</a>
 											</div>
 										</div>
 									</div>
@@ -218,7 +218,7 @@
 												<img src="img/teacher/et01.png">
 											</div>
 											<div>
-												<a href="#" class="btn">수강신청</a>
+												<a href="#" class="btn">상세보기</a>
 											</div>
 										</div>
 									</div>
@@ -237,7 +237,7 @@
 												<img src="img/teacher/et01.png">
 											</div>
 											<div>
-												<a href="#" class="btn">수강신청</a>
+												<a href="#" class="btn">상세보기</a>
 											</div>
 										</div>
 									</div>
