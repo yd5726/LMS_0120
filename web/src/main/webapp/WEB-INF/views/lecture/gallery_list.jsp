@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -168,14 +169,35 @@
 							</div>
 						</div>
 						<div class="boxes">
-							<div class="profile_card">
+							<c:forEach items='${sys_lec_list}' var='vo'>
+								<div class="profile_card">
+									<div class="cards">
+										<div class="cards-container">
+											<div class="upper-container"></div>
+											<div class="lower-container">
+												<div>
+													<h6>국어 주혜연 선생님</h6>
+													<h4>${vo.lecture_name}</h4>
+												</div>
+												<div>
+													<img src="img/teacher/kt.jpg">
+												</div>
+												<div>
+													<a href="en_lec_detail.le" class="btn">상세보기</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+							<!-- <div class="profile_card">
 								<div class="cards">
 									<div class="cards-container">
 										<div class="upper-container"></div>
 										<div class="lower-container">
 											<div>
-												<h6>귀에 쏙 꽂히는 국어강의 No.1!!!</h6>
-												<h4>주혜연 선생님</h4>
+												<h6>국어 주혜연 선생님</h6>
+												<h4>[2023]중3 국어 겨울특강</h4>
 											</div>
 											<div>
 												<img src="img/teacher/kt.jpg">
@@ -186,15 +208,15 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="profile_card">
+							</div> -->
+							<!-- <div class="profile_card">
 								<div class="cards">
 									<div class="cards-container">
 										<div class="upper-container"></div>
 										<div class="lower-container">
 											<div>
-												<h6>최고의 영어 강의를 보라!</h6>
-												<h4>김보라 선생님</h4>
+												<h6>영어 김보라 선생님</h6>
+												<h4>[2023]중3 영어 겨울특강</h4>
 											</div>
 											<div>
 												<img src="img/teacher/et.jpg">
@@ -212,8 +234,8 @@
 										<div class="upper-container"></div>
 										<div class="lower-container">
 											<div>
-												<h6>승리는 너의 것, 디렉터 황</h6>
-												<h4>황혜경 선생님</h4>
+												<h6>수학 황혜경 선생님</h6>
+												<h4>[2023]중3 수학 겨울특강</h4>
 											</div>
 											<div>
 												<img src="img/teacher/mt.jpg">
@@ -224,7 +246,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
