@@ -240,7 +240,7 @@
 													<a>${vo.lecture_name}</a>
 												</p>
 												<div>
-													<span><a href="#"
+													<span><a href="en_lec_detail.le"
 														class="btn btn-outline-dark text-dark">상세보기</a></span>
 												</div>
 											</div>
