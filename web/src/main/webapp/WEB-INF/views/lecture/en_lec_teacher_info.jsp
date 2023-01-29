@@ -161,6 +161,11 @@
 	width: 400px;
 	height: 190px;
 }
+
+.real_graph img {
+	width: 400px;
+	height: 190px;
+}
 </style>
 <body>
 	<div id="container">
@@ -197,7 +202,9 @@
 					</div>
 					<div class="teacher_graph_dv">
 						<p>수강생 분포</p>
-						<div class="real_graph"></div>
+						<div class="real_graph">
+							<img src="img/teacher/real_graph.png">
+						</div>
 					</div>
 				</div>
 			</div>
