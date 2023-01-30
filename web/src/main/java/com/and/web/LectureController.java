@@ -220,20 +220,11 @@ public class LectureController {
 
 	// 강의 상세보기 클릭 시 - kmj
 	@RequestMapping("/en_lec_detail.le")
-	public String en_lec_detail(HttpSession session) {
+	public String en_lec_detail(int lecture_code , Model model) {
 		// 응답화면연결
+		LectureVO vo = service.sys_lec_one(lecture_code);
+		model.addAttribute("vo", vo);
 		return "lecture/en_lec_detail";
-	}
-	
-	// 수강신청 버튼 클릭 시 - kmj
-	@RequestMapping("/enrollment_kt")
-	public String enrollment_kt(HttpSession session) {
-		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
-		String id = vo.getId();
-		//?
-		
-		// 응답화면연결
-		return "redirect:/";
 	}
 	
 	@RequestMapping("/en_lec_teacher_info.le")
@@ -241,4 +232,7 @@ public class LectureController {
 		// 응답화면연결
 		return "lecture/en_lec_teacher_info";
 	}
+	
+	
+	
 }
