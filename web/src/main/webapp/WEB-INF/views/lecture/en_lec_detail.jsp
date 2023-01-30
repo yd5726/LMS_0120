@@ -386,7 +386,6 @@
 			 alert('로그인 먼저 해주세요.');
 		 }else if(${not empty loginInfo.id && loginInfo.type == 'STUD'}) {
 			 alert('${loginInfo.member_name}님, 수강신청이 완료되었습니다.');
-			 location.href = "enrollment_kt"; 
 		 }else {
 			 alert('잘못된 접근입니다.');
 		 }
