@@ -17,6 +17,7 @@ public class EnrolmentController {
 	@Autowired private EnrolmentServiceImpl service;
 
 	// 수강신청 버튼 클릭 시 - kmj
+	/*
 	@RequestMapping("/enrollment_kt")
 	public String enrollment_kt(HttpSession session) {
 		MemberVO membervo = (MemberVO) session.getAttribute("loginInfo");
@@ -34,13 +35,15 @@ public class EnrolmentController {
 		// 응답화면연결
 		return "redirect:/";
 	}
+	*/
 	
+	// 수강신청 버튼 클릭 시 - kmj
 	@RequestMapping("/en_lec_insert.le")
 	public String enrollment_kt(String lecture_code , String member_code) {
 		HashMap<String, String> tempMap = new HashMap<String, String>();
 		tempMap.put("lecture_code", lecture_code);
 		tempMap.put("member_code", member_code);
-		// lecture_code랑 member_code이용해서 en<=테이블 여기에 인서트해보기.
+		
 		service.enrolment_kt(tempMap);
 		
 		return "redirect:/en_lec_detail.le?lecture_code="+lecture_code+"&member_code="+member_code;
