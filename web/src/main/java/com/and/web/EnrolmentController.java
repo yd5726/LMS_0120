@@ -43,9 +43,11 @@ public class EnrolmentController {
 		HashMap<String, String> tempMap = new HashMap<String, String>();
 		tempMap.put("lecture_code", lecture_code);
 		tempMap.put("member_code", member_code);
-		
-		service.enrolment_kt(tempMap);
-		
-		return "redirect:/en_lec_detail.le?lecture_code="+lecture_code+"&member_code="+member_code;
+		if(member_code != null) {
+			service.enrolment_kt(tempMap);
+			return "redirect:/en_lec_detail.le?lecture_code="+lecture_code;
+		}else {
+			return "redirect:/en_lec_detail.le?lecture_code="+lecture_code;
+		}
 	}
 }

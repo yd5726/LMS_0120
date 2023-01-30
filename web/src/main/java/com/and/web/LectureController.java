@@ -163,7 +163,6 @@ public class LectureController {
 	@RequestMapping("/open_new_lecture")
 	public String open_new_lecture(LectureVO lecturevo, HttpSession session) {
 		service.open_new_lecture(lecturevo);
-		
 		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
 		int mem_code = vo.getMember_code();
 		
